@@ -13,6 +13,12 @@
 		7B86E6FE28B9AD4800417632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B86E6FC28B9AD4800417632 /* Main.storyboard */; };
 		7B86E70028B9AD4A00417632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B86E6FF28B9AD4A00417632 /* Assets.xcassets */; };
 		7B86E70328B9AD4A00417632 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B86E70128B9AD4A00417632 /* LaunchScreen.storyboard */; };
+		7B86E71128B9AFB500417632 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B86E71028B9AFB500417632 /* Pokemon.swift */; };
+		7BDE3EB328BA5F7300CE10EE /* PokemonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE3EB228BA5F7300CE10EE /* PokemonDataManager.swift */; };
+		7BDE3EB528BA63FF00CE10EE /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE3EB428BA63FF00CE10EE /* PokemonViewController.swift */; };
+		7BDE3EB928BA816100CE10EE /* PokeCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE3EB828BA816100CE10EE /* PokeCellCollectionViewCell.swift */; };
+		7BDE3EBD28BA954100CE10EE /* pokemonList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BDE3EBC28BA954100CE10EE /* pokemonList.plist */; };
+		7BDE3EBF28BA963C00CE10EE /* PokemonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE3EBE28BA963C00CE10EE /* PokemonDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		7B86E6FF28B9AD4A00417632 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B86E70228B9AD4A00417632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B86E70428B9AD4A00417632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B86E71028B9AFB500417632 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		7BDE3EB228BA5F7300CE10EE /* PokemonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDataManager.swift; sourceTree = "<group>"; };
+		7BDE3EB428BA63FF00CE10EE /* PokemonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
+		7BDE3EB828BA816100CE10EE /* PokeCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		7BDE3EBC28BA954100CE10EE /* pokemonList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = pokemonList.plist; path = ../../../../Downloads/pokemonList.plist; sourceTree = "<group>"; };
+		7BDE3EBE28BA963C00CE10EE /* PokemonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,45 @@
 		7B86E6F528B9AD4800417632 /* MVCExample */ = {
 			isa = PBXGroup;
 			children = (
+				7BDE3EBC28BA954100CE10EE /* pokemonList.plist */,
 				7B86E6F628B9AD4800417632 /* AppDelegate.swift */,
 				7B86E6F828B9AD4800417632 /* SceneDelegate.swift */,
 				7B86E6FA28B9AD4800417632 /* ViewController.swift */,
 				7B86E6FC28B9AD4800417632 /* Main.storyboard */,
 				7B86E6FF28B9AD4A00417632 /* Assets.xcassets */,
+				7B86E70C28B9AF1000417632 /* Model */,
+				7B86E70D28B9AF1700417632 /* View */,
+				7B86E70E28B9AF2600417632 /* Controller */,
 				7B86E70128B9AD4A00417632 /* LaunchScreen.storyboard */,
 				7B86E70428B9AD4A00417632 /* Info.plist */,
 			);
 			path = MVCExample;
+			sourceTree = "<group>";
+		};
+		7B86E70C28B9AF1000417632 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B86E71028B9AFB500417632 /* Pokemon.swift */,
+				7BDE3EB228BA5F7300CE10EE /* PokemonDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B86E70D28B9AF1700417632 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BDE3EB828BA816100CE10EE /* PokeCellCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B86E70E28B9AF2600417632 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7BDE3EB428BA63FF00CE10EE /* PokemonViewController.swift */,
+				7BDE3EBE28BA963C00CE10EE /* PokemonDetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDE3EBD28BA954100CE10EE /* pokemonList.plist in Resources */,
 				7B86E70328B9AD4A00417632 /* LaunchScreen.storyboard in Resources */,
 				7B86E70028B9AD4A00417632 /* Assets.xcassets in Resources */,
 				7B86E6FE28B9AD4800417632 /* Main.storyboard in Resources */,
@@ -139,8 +182,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B86E6FB28B9AD4800417632 /* ViewController.swift in Sources */,
+				7B86E71128B9AFB500417632 /* Pokemon.swift in Sources */,
+				7BDE3EB528BA63FF00CE10EE /* PokemonViewController.swift in Sources */,
 				7B86E6F728B9AD4800417632 /* AppDelegate.swift in Sources */,
+				7BDE3EB328BA5F7300CE10EE /* PokemonDataManager.swift in Sources */,
+				7BDE3EBF28BA963C00CE10EE /* PokemonDetailViewController.swift in Sources */,
 				7B86E6F928B9AD4800417632 /* SceneDelegate.swift in Sources */,
+				7BDE3EB928BA816100CE10EE /* PokeCellCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +352,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -332,7 +380,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
