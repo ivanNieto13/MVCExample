@@ -9,5 +9,10 @@ import UIKit
 
 class PokeDetailCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet var pokeNameLabel: UILabel!
+    @IBOutlet var pokeImage: UIImageView!
+    @IBOutlet var pokeMoveLabel: UILabel!
+    @IBOutlet var pokeAbilityLabel: UILabel!
+    @IBOutlet var pokeWeightLabel: UILabel!
+    
     
 }

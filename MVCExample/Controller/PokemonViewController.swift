@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PokemonViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class PokemonViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let manager = PokemonDataManager()
     var selectedPokemon: Pokemon?
@@ -17,6 +17,7 @@ class PokemonViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         manager.fetch()
+        PokemonCollectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderCollectionReusableView")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -34,6 +35,23 @@ class PokemonViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedPokemon = manager.getPokemonByIndex(pokemonIndex: indexPath.row)
         self.performSegue(withIdentifier: "PokemonDetailSegue", sender: Self.self)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            guard let header = PokemonCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as? HeaderCollectionReusableView else {
+                return UICollectionReusableView()
+            }
+            return header
+        }
+
+        fatalError("Unexpected kind")
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
+    {
+        return CGSize(width: collectionView.frame.width, height: 150)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

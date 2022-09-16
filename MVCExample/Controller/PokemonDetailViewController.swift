@@ -7,25 +7,28 @@
 
 import UIKit
 
-class PokemonDetailViewController: UIViewController {
-
+class PokemonDetailViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
+    
     var receivedPokemon: Pokemon?
     
     @IBOutlet var PokemonDetailCollectionView: UICollectionView!
-    @IBOutlet var PokemonDetailImageCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("pokemon ->", receivedPokemon!)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let labelCell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokeDetailCell", for: indexPath) as! PokeDetailCellCollectionViewCell
-        
-        
-        labelCell.pokeNameLabel.text = receivedPokemon?.name
-        
-        return labelCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokeLabelCell", for: indexPath) as! PokeDetailCellCollectionViewCell
+        cell.pokeNameLabel.text = receivedPokemon?.name
+        cell.pokeImage.image = UIImage.init(named: receivedPokemon?.image ?? "0")
+        cell.pokeMoveLabel.text = receivedPokemon?.move
+        cell.pokeAbilityLabel.text = receivedPokemon?.ability
+        cell.pokeWeightLabel.text = receivedPokemon?.weight
+        return cell
     }
     
     
